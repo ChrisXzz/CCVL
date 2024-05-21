@@ -58,7 +58,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--data_path', default='/ccvl/net/ccvl15/zzhou82/PublicAbdominalData/16_TotalSegmentor', 
                         help='The path of totalsegmentator data')
-    parser.add_argument('--save_dir', default='/mnt/samsung/xinze/totalsegmentator_reorganized', help='The saving path after reorganizing')
+    parser.add_argument('--save_dir', default='/ccvl/net/ccvl15/xinze/totalsegmentator_reorganized', help='The saving path after reorganizing')
     args = parser.parse_args()
     
     print('>> {} CPU cores are secured.'.format(cpu_count()))
