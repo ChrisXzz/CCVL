@@ -9,3 +9,5 @@ Combine "lung_lower_lobe_left.nii.gz" and "lung_upper_lobe_left.nii.gz" into "lu
 Combine "lung_middle_lobe_right.nii.gz", "lung_lower_lobe_right.nii.gz", and "lung_upper_lobe_right.nii.gz" into "lung_right.nii.gz", and also keep the original files before combination.
 
 pancreas.py: code for reorganizing 15_Pancreas dataset.
+
+autopet.py: code for reorganizing 19_AutoPet_Nifti dataset.
