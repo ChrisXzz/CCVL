@@ -11,3 +11,5 @@ Combine "lung_middle_lobe_right.nii.gz", "lung_lower_lobe_right.nii.gz", and "lu
 pancreas.py: code for reorganizing 15_Pancreas dataset.
 
 autopet.py: code for reorganizing 19_AutoPet_Nifti dataset.
+
+ctspine1k.py: code for reorganizing 21_CTSpine1K dataset.
