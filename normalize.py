@@ -29,7 +29,7 @@ def fix_cosines_and_reorient_image(input_path, output_path):
     # Reorient the image to standard space
     filter = itk.OrientImageFilter.New(image)
     filter.UseImageDirectionOn()
-    matrix = np.array([[1, 0, 0], [0, -1, 0], [0, 0, -1]], np.float64)
+    matrix = np.array([[1, 0, 0], [0, -1, 0], [0, 0, -1]], np.float64) # RPS
     filter.SetDesiredCoordinateDirection(itk.GetMatrixFromArray(matrix))
     filter.Update()
     reoriented = filter.GetOutput()
