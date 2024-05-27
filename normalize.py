@@ -61,8 +61,8 @@ def main(args):
 if __name__ == '__main__':
     
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_path', default='/Users/chrischow/test', help='The path of totalsegmentator data')
-    parser.add_argument('--save_dir', default='/Users/chrischow/test_out', help='The saving path after reorganizing')
+    parser.add_argument('--data_path', default='', help='The path of totalsegmentator data')
+    parser.add_argument('--save_dir', default='', help='The saving path after reorganizing')
     args = parser.parse_args()
 
     if not os.path.exists(args.save_dir):
