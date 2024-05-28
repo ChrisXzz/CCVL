@@ -47,7 +47,7 @@ def process_nifti_folder(input_folder, output_folder):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_path', default='F:\\AbdomenAtlasDemoPredict\\', help='The path of raw dataset')
+    parser.add_argument('--data_path', default='F:\\AbdomenAtlas\\', help='The path of raw dataset')
     parser.add_argument('--save_dir', default='F:\\test\\', help='The saving path after reorganizing')
     args = parser.parse_args()
 
