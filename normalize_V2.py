@@ -57,7 +57,6 @@ def main():
     with ProcessPoolExecutor(max_workers=int(cpu_count()*0.8)) as executor:
         futures = {executor.submit(process_single_file, input_path, args.data_path, args.save_dir): input_path for input_path in input_paths}
         
-        # Add tqdm progress bar
         for future in tqdm(as_completed(futures), total=len(futures), desc='Processing files'):
             input_path = futures[future]
             try:
