@@ -1,6 +1,6 @@
 # CCVL
 
-normalize.py: code for fixing "orthonormal direction cosines" error in AbdomenAtlas1.0 dataset, and adjusting the direction of the AbdomenAtlas1.0 dataset to RPS. 
+normalize_V2.py: code for fixing "orthonormal direction cosines" error in AbdomenAtlas1.0 dataset, and adjusting the direction of the AbdomenAtlas1.0 dataset to RPS. 
 
 totalsegmentator.py: code for reorganizing 16_TotalSegmentor dataset.  
 Note: Rename "gallbladder.nii.gz" to "gall_bladder.nii.gz";  
