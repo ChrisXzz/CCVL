@@ -6,7 +6,6 @@ from tqdm import tqdm
 import argparse
 
 def process_file(file, dataset_path, target_path):
-    """处理单个文件，复制并重命名到目标路径"""
     if os.path.isfile(os.path.join(dataset_path, file)):
         file_name = os.path.splitext(file)[0]
         if file_name.endswith('.nii'):
