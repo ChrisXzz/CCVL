@@ -9,7 +9,6 @@ from multiprocessing import cpu_count
 from tqdm import tqdm
 
 def merge_segmentations(input_files, output_file):
-    """合并多个segmentation文件"""
     base_img = nib.load(input_files[0])
     base_data = base_img.get_fdata()
 
@@ -22,34 +21,31 @@ def merge_segmentations(input_files, output_file):
     nib.save(new_img, output_file)
 
 def process_case(case_folder, output_folder, features_rename_map, features_to_merge):
-    """处理单个案例"""
     os.makedirs(output_folder, exist_ok=True)
     shutil.copy2(os.path.join(case_folder, 'ct.nii.gz'), os.path.join(output_folder, 'ct.nii.gz'))
     seg_input_folder = os.path.join(case_folder, 'segmentations')
     seg_output_folder = os.path.join(output_folder, 'segmentations')
     shutil.copytree(seg_input_folder, seg_output_folder)
 
-    # 重命名segmentation文件
     for old_name, new_name in features_rename_map.items():
         old_path = os.path.join(seg_output_folder, old_name)
         if os.path.exists(old_path):
             new_path = os.path.join(seg_output_folder, new_name)
             os.rename(old_path, new_path)
 
-    # 合并segmentation文件
     for output_name, input_names in features_to_merge.items():
         input_files = [os.path.join(seg_output_folder, name) for name in input_names if os.path.exists(os.path.join(seg_output_folder, name))]
         if input_files:
             merge_segmentations(input_files, os.path.join(seg_output_folder, output_name))
 
 def clean(cases_path, output_root, features_rename_map, features_to_merge):
-    cases_folder_name = os.path.basename(cases_path)  # 提取源数据集文件夹名
+    cases_folder_name = os.path.basename(cases_path)  
 
     tasks = []
     for case_name in os.listdir(cases_path):
         case_folder = os.path.join(cases_path, case_name)
         if os.path.isdir(case_folder):
-            output_folder = os.path.join(output_root, f"{cases_folder_name}_{case_name}")  # 动态命名输出文件夹
+            output_folder = os.path.join(output_root, f"{cases_folder_name}_{case_name}")  
             tasks.append((case_folder, output_folder, features_rename_map, features_to_merge))
     return tasks
 
