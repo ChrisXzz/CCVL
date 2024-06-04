@@ -6,12 +6,10 @@ from tqdm import tqdm
 import argparse
 
 def compress_nii_file(input_path, output_path):
-    """压缩 NIfTI 文件并保存为 .nii.gz 格式"""
     img = nib.load(input_path)
     nib.save(img, output_path)
 
 def organize_and_compress_nii_files(base_path, output_base_path):
-    """组织并压缩 NIfTI 文件"""
     tasks = []
     for root, dirs, files in os.walk(base_path):
         for file in files:
