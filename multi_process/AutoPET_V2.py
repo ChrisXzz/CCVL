@@ -40,7 +40,6 @@ feature_dict = {'background': 0, 'unknown_tissue': 1, 'muscles': 2, 'fat': 3, 'a
                 'artery_subclavian_left': 144}  # Fill in with actual feature name and value
 
 def match(raw_base_dir, mask_base_dir, new_base_dir):
-    """匹配原始数据和掩码数据，并复制到新的目录结构中"""
     if not os.path.isdir(new_base_dir):
         os.makedirs(new_base_dir)
 
@@ -68,7 +67,6 @@ def match(raw_base_dir, mask_base_dir, new_base_dir):
     return tasks
 
 def extract_features(case_dir, feature_dict):
-    """提取特征并保存为单独的 NIfTI 文件"""
     segmentation_folder = os.path.join(case_dir, "segmentations")
     case = os.path.basename(case_dir)
     segmentation_file = os.path.join(segmentation_folder, f"{case}.nii.gz")
