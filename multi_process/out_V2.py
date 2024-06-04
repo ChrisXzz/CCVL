@@ -6,31 +6,24 @@ from tqdm import tqdm
 import argparse
 
 def process_case(case_file, img_path, label_path, label_6cls_path, destination_path):
-    """处理单个案例文件，复制并重命名到目标路径"""
-    # 获取文件名（去除扩展名和.nii）
     case_name = os.path.splitext(case_file)[0]
     if case_name.endswith(".nii"):
-        case_name = case_name[:-4]  # 移除 .nii 扩展名
+        case_name = case_name[:-4]  
 
-    # 定义案例文件夹路径
     case_folder_name = "OUT_" + case_name
     case_folder_path = os.path.join(destination_path, case_folder_name)
     segmentations_path = os.path.join(case_folder_path, "segmentations")
     
-    # 创建案例文件夹和segmentations子文件夹
     os.makedirs(segmentations_path, exist_ok=True)
     
-    # 获取每个案例的文件路径
     img_file_path = os.path.join(img_path, case_file)
     label_file_path = os.path.join(label_path, case_file)
     label_6cls_file_path = os.path.join(label_6cls_path, case_file)
     
-    # 定义重命名后的文件路径
     new_img_file_path = os.path.join(case_folder_path, "ct.nii.gz")
     new_label_file_path = os.path.join(segmentations_path, case_file)
     new_label_6cls_file_path = os.path.join(segmentations_path, "6cls_" + case_file)
     
-    # 复制并重命名文件
     shutil.copy2(img_file_path, new_img_file_path)
     shutil.copy2(label_file_path, new_label_file_path)
     shutil.copy2(label_6cls_file_path, new_label_6cls_file_path)
