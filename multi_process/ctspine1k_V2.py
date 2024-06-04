@@ -92,7 +92,7 @@ def main():
     args = parser.parse_args()
     
     print('>> {} CPU cores are secured.'.format(cpu_count()))
-    '''
+    
     # Matching tasks
     match_tasks = match(args.data_path, args.data_path_mask, args.save_dir)
     with ProcessPoolExecutor(max_workers=cpu_count()) as executor:
@@ -103,7 +103,7 @@ def main():
                 future.result()
             except Exception as e:
                 print(f"Error processing {task[3]}: {e}")
-    '''
+    
     # Feature extraction tasks
     extract_tasks = extract_features(args.save_dir, feature_dict)
     with ProcessPoolExecutor(max_workers=cpu_count()) as executor:
