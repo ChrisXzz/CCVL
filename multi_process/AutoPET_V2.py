@@ -8,7 +8,7 @@ from multiprocessing import cpu_count
 from tqdm import tqdm
 
 feature_dict = {'background': 0, 'unknown_tissue': 1, 'muscles': 2, 'fat': 3, 'abdominal_tissue': 4, 'mediastinal_tissue': 5,
-                'esophagus': 6, 'stomach': 7, 'small_bowel': 8, 'duodenum': 9, 'colon': 10, 'gallbladder': 12, 'liver': 13, 
+                'esophagus': 6, 'stomach': 7, 'small_bowel': 8, 'duodenum': 9, 'colon': 10, 'gall_bladder': 12, 'liver': 13, 
                 'pancreas': 14, 'kidney_left': 15, 'kidney_right': 16, 'bladder': 17, 'gonads': 18, 'prostate': 19,
                 'uterocervix': 20, 'uterus': 21, 'breast_left': 22, 'breast_right': 23, 'spinal_canal': 24, 'brain': 25,
                 'spleen': 26, 'adrenal_gland_left': 27, 'adrenal_gland_right': 28, 'thyroid_left': 29, 'thyroid_right': 30,
