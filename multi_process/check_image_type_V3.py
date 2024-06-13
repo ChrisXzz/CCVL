@@ -10,16 +10,16 @@ def convert_image_dtype(file_path, target_dtype, max_value=None):
     img = nib.load(file_path)
     data = np.array(img.dataobj)
     
-    if data.dtype != target_dtype:
-        if max_value is not None:
-            data[data > max_value] = max_value
-            data[data < -max_value] = -max_value
-        # data = data.astype(target_dtype)
-        img = nib.Nifti1Image(data, img.affine, img.header)
-        img.set_data_dtype(target_dtype)
-        img.get_data_dtype(finalize=True)
-        nib.save(img, file_path)
-        print(f"Converted {file_path} to {target_dtype}")
+
+    if max_value is not None:
+        data[data > max_value] = max_value
+        data[data < -max_value] = -max_value
+    # data = data.astype(target_dtype)
+    img = nib.Nifti1Image(data, img.affine, img.header)
+    img.set_data_dtype(target_dtype)
+    img.get_data_dtype(finalize=True)
+    nib.save(img, file_path)
+    # print(f"Converted {file_path} to {target_dtype}")
 
 def process_case_folder(case_folder):
     ct_file = os.path.join(case_folder, 'ct.nii.gz')
