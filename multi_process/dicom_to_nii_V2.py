@@ -31,7 +31,7 @@ def process_dicom_series(args):
         shutil.copy(file, temp_dir)
 
     # 将临时文件夹中的文件转换为 NIfTI
-    dicom2nifti.convert_directory(temp_dir, temp_dir, compression=True, reorient=True)
+    dicom2nifti.convert_directory(temp_dir, temp_dir, compression=True, reorient=True) 
 
     # 为输出的 NIfTI 文件创建文件名，包括总路径文件夹名、子文件夹名和子文件夹的子文件夹名
     for file_name in os.listdir(temp_dir):
@@ -76,7 +76,7 @@ def main():
                 series_files = {}
 
                 for dicom_file in dicom_files:
-                    ds = pydicom.dcmread(os.path.join(dicom_dir, dicom_file), force=True)
+                    ds = pydicom.dcmread(os.path.join(dicom_dir, dicom_file), force=True) # Normally, force=False
 
                     if "SeriesInstanceUID" in ds:
                         uid = ds.SeriesInstanceUID
