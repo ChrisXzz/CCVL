@@ -1,6 +1,6 @@
 Step 1. Preprocessing your dataset to match the following folder structure
 
-Step 2. Run xxx.py to reorganize your dataset to the following folder strcture
+Step 2. Run xxx.py to reorganize your dataset to the following folder structure
 
 Step 3. Run xxx.py to adjust the constrast value into (-1000, 1000) of your ct images (ct.nii.gz)
 
