@@ -29,5 +29,5 @@ pyhthon check_image_type_V3.py
 
 Step 5. Run id_map.py to rename cases in dataset to ID_MAP style. Modify the "source_path" to [Your_Processed_Dataset_Dir]. Modify the "destination_path" to [Your_ID_MAP_Dir]. MOdify "start_number" to the number you want.
 ```
-python id_map.py
+python id_maps.py
 ```
