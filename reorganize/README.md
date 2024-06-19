@@ -22,7 +22,7 @@ Step 3. Run normalize_V2.py to restore potential cosine error in ct images and a
 python normalize_V2.py
 ```
 
-Step 4. Run check_image_type_V3.py to ensure datatype of ct image to be int16 and datatype of mask file to be int8. Modify the "base_folder" to [Your_Dataset_Dir].
+Step 4. Run check_image_type_V3.py to ensure datatype of ct image to be int16 and datatype of mask file to be int8. Modify the "base_folder" to [Your_Processed_Dataset_Dir].
 ```
 pyhthon check_image_type_V3.py
 ```
