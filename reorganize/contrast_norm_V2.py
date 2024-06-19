@@ -7,9 +7,6 @@ from multiprocessing import cpu_count
 from tqdm import tqdm
 
 def normalize_image(image, min_val=-1000, max_val=1000):
-    """
-    Normalize the image to the range [min_val, max_val]
-    """
     image[image > max_val] = max_val
     image[image < min_val] = min_val
     normalized_image = image
@@ -17,9 +14,6 @@ def normalize_image(image, min_val=-1000, max_val=1000):
     return normalized_image
 
 def process_file(file_path):
-    """
-    Normalize a single ct.nii.gz file
-    """
     # Load the NIfTI file
     img = nib.load(file_path)
     img_data = np.array(img.dataobj)
@@ -37,9 +31,6 @@ def process_file(file_path):
 
 
 def normalize_ct_images(directory):
-    """
-    Generate tasks for normalizing all ct.nii.gz files in the specified directory
-    """
     tasks = []
     for root, _, files in os.walk(directory):
         for file in files:
