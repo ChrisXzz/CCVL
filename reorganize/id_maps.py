@@ -30,8 +30,8 @@ def rename_folders(source_path, destination_path, prefix="BDMAP_", start_number=
 
 def main():
     parser = argparse.ArgumentParser(description="Rename and copy folders with a new prefix and sequential numbering.")
-    parser.add_argument('--source_path', default = 'G:\\TODO\\acrin_reorganized\\', help='The source directory containing the folders to rename.')
-    parser.add_argument('--destination_path', default = 'G:\\TODO\\2024_06_19_id_map\\', help='The destination directory to save the renamed folders.')
+    parser.add_argument('--source_path', default = '', help='The source directory containing the folders to rename.')
+    parser.add_argument('--destination_path', default = '', help='The destination directory to save the renamed folders.')
     parser.add_argument('--prefix', default='BDMAP_', help='The prefix for the new folder names.')
     parser.add_argument('--start_number', type=int, default=15638, help='The starting number for the new folder names.')
     args = parser.parse_args()
