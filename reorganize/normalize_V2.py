@@ -63,8 +63,8 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_path', default='F:\\wr_temp\\', help='The path of totalsegmentator data')
-    parser.add_argument('--save_dir', default='F:\\wr_temp\\', help='The saving path after reorganizing')
+    parser.add_argument('--data_path', default='', help='The path of totalsegmentator data')
+    parser.add_argument('--save_dir', default='', help='The saving path after reorganizing')
     args = parser.parse_args()
 
     if not os.path.exists(args.save_dir):
