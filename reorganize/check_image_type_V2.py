@@ -6,7 +6,6 @@ from tqdm import tqdm
 import argparse
 
 def convert_image_dtype(file_path, target_dtype, max_value=None):
-    """转换图像的数据类型"""
     img = nib.load(file_path)
     data = np.array(img.dataobj)
     
@@ -20,7 +19,6 @@ def convert_image_dtype(file_path, target_dtype, max_value=None):
     # print(f"Converted {file_path} to {target_dtype}")
 
 def process_case_folder(case_folder):
-    """处理单个案例文件夹"""
     ct_file = os.path.join(case_folder, 'ct.nii.gz')
     segmentations_folder = os.path.join(case_folder, 'segmentations')
     
@@ -34,7 +32,6 @@ def process_case_folder(case_folder):
                 convert_image_dtype(seg_file, np.int8)
 
 def process_all_cases(base_folder):
-    """并行处理所有案例文件夹并显示进度条"""
     case_folders = [os.path.join(base_folder, case_name) for case_name in os.listdir(base_folder) if os.path.isdir(os.path.join(base_folder, case_name))]
     
     with ProcessPoolExecutor() as executor:
@@ -49,7 +46,7 @@ def process_all_cases(base_folder):
 
 def main():
     parser = argparse.ArgumentParser(description="Process medical image datasets.")
-    parser.add_argument('--base_folder', default = '/Volumes/PortableSSD/TODO/out_reorganized/', help='The base folder containing all case folders.')
+    parser.add_argument('--base_folder', default = '', help='The base folder containing all case folders.')
     args = parser.parse_args()
     
     process_all_cases(args.base_folder)
