@@ -13,10 +13,16 @@ Step 1. Preprocessing your dataset to match the following folder structure to th
   - ...
 ```
 
-Step 2. Run contrast_norm.py to adjust the constrast value into (-1000, 1000) of your ct images (ct.nii.gz). Modify the "directory" to [Your__Dataset_Dir].
+Step 2. Run contrast_norm.py to adjust the constrast value into (-1000, 1000) of your ct images (ct.nii.gz). Modify the "directory" to [Your_Dataset_Dir].
 ```
 python contrast_norm.py
 ```
-Step 3. Run normalize_V2.py to restore potential cosine error in ct images and adjust its corresponding 3D direction to RPS
+Step 3. Run normalize_V2.py to restore potential cosine error in ct images and adjust its corresponding 3D direction to RPS. Modify the "data_path" to [Your_Dataset_Dir] and modify the "save_dir" to [Your_Processed_Dataset_Dir].
+```
+python normalize_V2.py
+```
 
-Step 4. Run check_image_type_V2.py to ensure datatype of ct image to be int16 and datatype of mask file to be int8
+Step 4. Run check_image_type_V3.py to ensure datatype of ct image to be int16 and datatype of mask file to be int8. Modify the "base_folder" to [Your_Dataset_Dir].
+```
+pyhthon check_image_type_V3.py
+```
