@@ -1,4 +1,4 @@
-Step 1. Preprocessing your dataset to match the following folder structure to the following folder structure
+Step 1. Preprocessing your dataset to match the following folder structure 
 ```
 - Your_Dataset_reorganized_Dir/
   - case1/
