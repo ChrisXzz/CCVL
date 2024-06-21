@@ -9,7 +9,7 @@ from SurfaceDice import compute_surface_distances, compute_surface_dice_at_toler
 seg_path = 'E:\\suprem_remake\\SuPreM\\target_applications\\pancreas_tumor_detection\\inference\\segresnet.jhh\\'
 gt_path = 'E:\\GT\\'
 save_path = 'E:\\'
-save_name = 'DSC_NSD_teamname.xlsx'
+save_name = 'DSC_NSD.xlsx'
 cases = os.listdir(seg_path)
 cases = [case for case in cases if os.path.isdir(os.path.join(seg_path, case))]
 cases.sort()
