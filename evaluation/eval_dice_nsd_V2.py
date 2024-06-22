@@ -6,10 +6,10 @@ import pandas as pd
 from collections import OrderedDict
 from SurfaceDice import compute_surface_distances, compute_surface_dice_at_tolerance, compute_dice_coefficient
 
-seg_path = 'E:\\suprem_remake\\SuPreM\\target_applications\\pancreas_tumor_detection\\inference\\segresnet.jhh\\'
-gt_path = 'E:\\GT\\'
-save_path = 'E:\\'
-save_name = 'DSC_NSD.xlsx'
+seg_path = '' # segmentation results path
+gt_path = '' # groundtruth path
+save_path = '' # DSC and NSD results save path
+save_name = 'DSC_NSD.xlsx' # DSC and NSD results file name 
 cases = os.listdir(seg_path)
 cases = [case for case in cases if os.path.isdir(os.path.join(seg_path, case))]
 cases.sort()
@@ -24,7 +24,7 @@ for label in labels:
     metrics[f'{label}_NSD'] = []
 
 for case in cases:
-    seg_case_path = os.path.join(seg_path, case, 'probabilities')
+    seg_case_path = os.path.join(seg_path, case, 'segmentations')
     gt_case_path = os.path.join(gt_path, case, 'segmentations')
     
     if not os.path.exists(gt_case_path):
@@ -33,7 +33,7 @@ for case in cases:
     
     metrics['Name'].append(case)
     for label in labels:
-        seg_file = os.path.join(seg_case_path, f'{label}.nii.gz')
+        seg_file = os.path.join(seg_case_path, f'pancreatic_{label}.nii.gz')
         gt_file = os.path.join(gt_case_path, f'{label}.nii.gz')
         
         if not os.path.exists(seg_file) or not os.path.exists(gt_file):
@@ -45,16 +45,11 @@ for case in cases:
             case_spacing = nb.load(gt_file).header.get_zooms()
 
             if np.sum(gt_data) == 0 and np.sum(seg_data) == 0:
-                DSC, NSD = 1, 1
-            elif np.sum(gt_data) == 0 or np.sum(seg_data) == 0:
-                DSC, NSD = 0, 0
+                DSC, NSD = float('nan'), float('nan')
             else:
                 DSC = compute_dice_coefficient(gt_data, seg_data)
-                if DSC < 0.2:
-                    NSD = 0
-                else:
-                    surface_distances = compute_surface_distances(gt_data, seg_data, case_spacing)
-                    NSD = compute_surface_dice_at_tolerance(surface_distances, label_tolerance[label])
+                surface_distances = compute_surface_distances(gt_data, seg_data, case_spacing)
+                NSD = compute_surface_dice_at_tolerance(surface_distances, label_tolerance[label])
         
         metrics[f'{label}_DSC'].append(round(DSC, 4))
         metrics[f'{label}_NSD'].append(round(NSD, 4))
