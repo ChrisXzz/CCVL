@@ -1,7 +1,7 @@
-####Step 0. Set up. 
+#### Step 0. Set up. 
 
 
-######Step 1. Create datalists for cross validation. Run cv_datalist.py
+###### Step 1. Create datalists for cross validation. Run cv_datalist.py
 
 
 Step 2. Training Step.
