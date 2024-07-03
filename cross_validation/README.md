@@ -36,7 +36,7 @@ cd ../
 python cv_datalist.py
 ```
 
-#### Step 2. Cross Validation
+#### Step 2. Run cross validation
 ```bash
 bash cross_validation.sh
 ```
