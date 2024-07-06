@@ -34,9 +34,7 @@ cd ../
 ###### Download cross_validation.sh, and shell_scripts_cv folder to the following path: SuPreM/target_applications/pancreas_tumor_detection/
 ###### Modify the datalist_dir to the actual path
 ```bash
-cd dataset/dataset_list/
-python cv_datalist.py
-cd ../..
+python ./dataset/dataset_list/cv_datalist.py --input_file1 ./dataset/dataset_list/jhh_train.txt --input_file2 ./dataset/dataset_list/jhh_test.txt --output_dir ./dataset/dataset_list/
 ```
 
 #### Step 2. Run cross validation
