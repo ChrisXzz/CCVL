@@ -29,7 +29,7 @@ cd ../
 ```
 
 
-#### Step 1. Create datalists for cross validation. Run cv_datalist.py
+#### Step 1. Create datalists for cross validation.
 ###### Download cv_datalist.py to the following path: SuPreM/target_applications/pancreas_tumor_detection/dataset/dataset_list/
 ###### Download cross_validation.sh, and shell_scripts_cv folder to the following path: SuPreM/target_applications/pancreas_tumor_detection/
 ###### Modify the datalist_dir to the actual path
