@@ -55,7 +55,7 @@ def main():
 
     # Save the mapping to an Excel file
     df = pd.DataFrame(rename_mapping, columns=['Original Name', 'New Name'])
-    excel_path = os.path.join(args.destination_path, "stnd_rename_mapping.xlsx")
+    excel_path = os.path.join(args.destination_path, "rename_id_mapping.xlsx")
     df.to_excel(excel_path, index=False)
 
     print(f"Renamed {len(rename_mapping)} folders and saved to {args.destination_path}")
