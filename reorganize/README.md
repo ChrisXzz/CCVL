@@ -15,7 +15,7 @@ Step 1. Preprocessing your dataset to match the following folder structure.
 
 Step 2. Run contrast_norm.py to adjust the constrast value into (-1000, 1000) of your ct images (ct.nii.gz). Modify the "directory" to [Your_Dataset_Dir].
 ```
-python contrast_norm.py
+python contrast_norm.py --directory [Your_Dataset_Dir]
 ```
 Step 3. Run normalize_V2.py to restore potential cosine error in ct images and adjust its corresponding 3D direction to RPS. Modify the "data_path" to [Your_Dataset_Dir] and modify the "save_dir" to [Your_Processed_Dataset_Dir].
 ```
