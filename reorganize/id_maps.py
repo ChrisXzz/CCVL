@@ -29,7 +29,7 @@ def rename_folders(source_path, destination_path, prefix="BDMAP_", start_number=
     return tasks
 
 def main():
-    parser = argparse.ArgumentParser(description="Rename and copy folders with a new prefix and sequential numbering.")
+    parser = argparse.ArgumentParser()
     parser.add_argument('--source_path', default = '', help='The source directory containing the folders to rename.')
     parser.add_argument('--destination_path', default = '', help='The destination directory to save the renamed folders.')
     parser.add_argument('--prefix', default='BDMAP_', help='The prefix for the new folder names.')
