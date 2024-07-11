@@ -40,7 +40,7 @@ def normalize_ct_images(directory):
     return tasks
 
 def main():
-    parser = argparse.ArgumentParser(description="Normalize CT images in NIfTI format to int16.")
+    parser = argparse.ArgumentParser()
     parser.add_argument('--directory', default = '', help='The directory containing the ct.nii.gz files.')
     args = parser.parse_args()
 
