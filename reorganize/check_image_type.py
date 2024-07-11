@@ -43,7 +43,7 @@ def process_all_cases(base_folder):
                 print(f"Error processing {case_folder}: {e}")
 
 def main():
-    parser = argparse.ArgumentParser(description="Process medical image datasets.")
+    parser = argparse.ArgumentParser()
     parser.add_argument('--base_folder', default = '', help='The base folder containing all case folders.')
     args = parser.parse_args()
     
