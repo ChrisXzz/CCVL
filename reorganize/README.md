@@ -4,7 +4,7 @@
 
 #### STEP 1. Preprocessing your dataset to match the following folder structure.
 ```
-- Your_Dataset_reorganized_Dir/
+- Your_Dataset_Dir/
   - case1/
     - segmentations/
     - ct.nii.gz
