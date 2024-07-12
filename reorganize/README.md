@@ -21,7 +21,7 @@
 ```
 python contrast_norm.py --directory [Your_Dataset_Dir]
 ```
-#### STEP 3. Run normalize_V2.py to restore potential cosine error in ct images and adjust its corresponding 3D direction to RPS. Modify the "data_path" to [Your_Dataset_Dir] and modify the "save_dir" to [Your_Processed_Dataset_Dir].
+#### STEP 3. Run normalize.py to restore potential cosine error in ct images and adjust its corresponding 3D direction to RPS. Modify the "data_path" to [Your_Dataset_Dir] and modify the "save_dir" to [Your_Processed_Dataset_Dir].
 ```
 python normalize.py --data_path [Your_Dataset_Dir] --save_dir [Your_Processed_Dataset_Dir]
 ```
