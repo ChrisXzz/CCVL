@@ -23,7 +23,7 @@
   - ...
 ```
 
-#### STEP 2. Run contrast_norm.py to adjust the constrast value into (-1000, 1000) of your ct images (ct.nii.gz). Modify the "directory" to [Your_Dataset_Dir].
+#### STEP 2. Run contrast_norm.py to adjust the constrast value of your ct images (ct.nii.gz) into (-1000, 1000). Modify the "directory" to [Your_Dataset_Dir].
 ```
 python -W ignore contrast_norm.py --directory [Your_Dataset_Dir]
 ```
