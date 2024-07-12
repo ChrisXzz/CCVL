@@ -37,7 +37,7 @@ python -W ignore normalize.py --data_path [Your_Dataset_Dir] --save_dir [Your_Pr
 pyhthon -W ignore check_image_type.py --base_folder [Your_Processed_Dataset_Dir]
 ```
 
-#### STEP 5. Run id_map.py to rename cases in dataset to ID_MAP style. Modify the "source_path" to [Your_Processed_Dataset_Dir]. Modify the "destination_path" to [Your_ID_MAP_Dir]. Modify "start_number" to the number you want to start coding.
+#### STEP 5. Run id_map.py to rename cases in your dataset to ID_MAP style. Modify the "source_path" to [Your_Processed_Dataset_Dir]. Modify the "destination_path" to [Your_ID_MAP_Dir]. Modify "start_number" to the number you want to start coding.
 ```
 python -W ignore id_maps.py --source_path [Your_Processed_Dataset_Dir] --destination_path [Your_ID_MAP_Dir] --start_number [Number you want to start coding]
 ```
