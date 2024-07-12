@@ -7,12 +7,18 @@
 - Your_Dataset_Dir/
   - case1/
     - segmentations/
+      -mask1.nii.gz
+      ...
     - ct.nii.gz
   - case2/
     - segmentations/
+      -mask1.nii.gz
+      ...
     - ct.nii.gz
   - case3/
     - segmentations/
+      -mask1.nii.gz
+      ...
     - ct.nii.gz
   - ...
 ```
