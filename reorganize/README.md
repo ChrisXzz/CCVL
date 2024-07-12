@@ -32,7 +32,7 @@ python -W ignore contrast_norm.py --directory [Your_Dataset_Dir]
 python -W ignore normalize.py --data_path [Your_Dataset_Dir] --save_dir [Your_Processed_Dataset_Dir]
 ```
 
-#### STEP 4. Run check_image_type_V3.py to ensure datatype of ct image to be int16 and datatype of mask file to be int8. Modify the "base_folder" to [Your_Processed_Dataset_Dir].
+#### STEP 4. Run check_image_type.py to ensure datatype of ct image to be int16 and datatype of mask file to be int8. Modify the "base_folder" to [Your_Processed_Dataset_Dir].
 ```
 pyhthon -W ignore check_image_type.py --base_folder [Your_Processed_Dataset_Dir]
 ```
