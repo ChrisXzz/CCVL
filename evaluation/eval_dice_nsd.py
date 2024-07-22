@@ -44,7 +44,7 @@ for case in cases:
             gt_data = np.uint8(nb.load(gt_file).get_fdata())
             case_spacing = nb.load(gt_file).header.get_zooms()
 
-            if np.sum(gt_data) == 0 and np.sum(seg_data) == 0:
+            if np.sum(gt_data) == 0:
                 DSC, NSD = float('nan'), float('nan')
             else:
                 DSC = compute_dice_coefficient(gt_data, seg_data)
