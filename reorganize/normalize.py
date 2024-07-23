@@ -11,7 +11,7 @@ from tqdm import tqdm
 
 def fix_cosines_and_reorient_image(input_path, output_path):
     try:
-        image = itk.imread(input_path, itk.SS)
+        image = itk.imread(input_path, itk.F)
     except Exception as e:
         print(f'An error occurred: {e}')
         print(f'Attempting to fix cosines problem for {input_path}...')
