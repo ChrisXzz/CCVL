@@ -33,7 +33,7 @@ def main():
     parser.add_argument('--source_path', required=True, help='The source directory containing the folders to rename.')
     parser.add_argument('--destination_path', required=True, help='The destination directory to save the renamed folders.')
     parser.add_argument('--prefix', default='BDMAP_', help='The prefix for the new folder names.')
-    parser.add_argument('--start_number', type=int, default=15638, help='The starting number for the new folder names.')
+    parser.add_argument('--start_number', type=int, required=True, help='The starting number for the new folder names.')
     args = parser.parse_args()
 
     tasks = rename_folders(args.source_path, args.destination_path, args.prefix, args.start_number)
