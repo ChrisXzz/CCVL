@@ -41,7 +41,7 @@ def normalize_ct_images(directory):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--directory', default = '', help='The directory containing the ct.nii.gz files.')
+    parser.add_argument('--directory', required=True, help='The directory containing the ct.nii.gz files.')
     args = parser.parse_args()
 
     tasks = normalize_ct_images(args.directory)
