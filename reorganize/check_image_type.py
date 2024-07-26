@@ -44,7 +44,7 @@ def process_all_cases(base_folder):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--base_folder', default = '', help='The base folder containing all case folders.')
+    parser.add_argument('--base_folder', required=True, help='The base folder containing all case folders.')
     args = parser.parse_args()
     
     process_all_cases(args.base_folder)
