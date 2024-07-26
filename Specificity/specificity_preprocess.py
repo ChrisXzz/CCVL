@@ -91,13 +91,13 @@ def calculate_true_negative(csv_file, output_dir, dataset):
     true_negative_count = 0
 
     for case in msd_healthy_case_names:
-        # 加载对应的nii.gz文件
+        # load nii.gz file
         seg_file = os.path.join(output_dir, f"{case}.nii.gz")
         if os.path.exists(seg_file):
             img = nib.load(seg_file)
             data = img.get_fdata()
             
-            # 检查是否有任何肿瘤
+            # check if any detectable tumors
             if np.all((data != 3) & (data != 4) & (data != 5)):
                 true_negative_count += 1
     
@@ -107,11 +107,11 @@ def calculate_true_negative(csv_file, output_dir, dataset):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Process segmentation results with connected component analysis.")
-    parser.add_argument('--input_dir', default='/Volumes/PortableSSD/inference_mask_results_BTCV/', help='The directory containing input segmentation files.')
-    parser.add_argument('--output_dir', default='/Volumes/PortableSSD/inference_mask_results_post/', help='The directory to save the processed segmentation files.')
-    parser.add_argument('--gt_csv', default='/Users/chrischow/Desktop/final_mapping.csv', help='The directory containing patient groudtruth information.')
-    parser.add_argument('--min_radius', default=4, help='The directory containing patient groudtruth information.')
-    parser.add_argument('--dataset', default='BTCV', help='The directory containing patient groudtruth information.')
+    parser.add_argument('--input_dir', required=True, help='The directory containing input segmentation files.')
+    parser.add_argument('--output_dir', required=True, help='The directory to save the processed segmentation files.')
+    parser.add_argument('--gt_csv', required=True, help='The directory containing patient groudtruth information.')
+    parser.add_argument('--min_radius', required=True, help='The smallest tumor size you want to detect.')
+    parser.add_argument('--dataset', required=True, help='The name of dataset you want to process.')
     
     args = parser.parse_args()
 
