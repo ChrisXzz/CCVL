@@ -68,7 +68,7 @@ save_path: path that save your DSC and NSD results to
 
 save_name: the prefered name of excel file that contains DSC and NSD results
 
-Before you start calculating, make sure that you have removed the following case from your inference results.
+Before you start calculating, make sure that you have removed the following cases from your inference results.
 ```
 'FELIX-Cys-1432', 'FELIX5145', 'FELIX-CYS-1289', 'FELIX7528', 'FELIX-Cys-1680', 'FELIX-Cys-1222', 'FELIX7594', 'FELIX5222', 'FELIX5224', 'FELIX-PDAC-1174', 'FELIX7179', 'FELIX5544', 'FELIX7521', 'FELIX-Cys-1632', 'FELIX-Cys-1623', 'FELIX-Cys-1233', 'FELIX5046'
 ```
