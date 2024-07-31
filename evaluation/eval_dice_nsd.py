@@ -51,9 +51,28 @@ for case in cases:
                 surface_distances = compute_surface_distances(gt_data, seg_data, case_spacing)
                 NSD = compute_surface_dice_at_tolerance(surface_distances, label_tolerance[label])
         
+        if label in ['cyst', 'pdac', 'pnet']:
+                if combined_seg_data is None:
+                    combined_seg_data = seg_data
+                    combined_gt_data = gt_data
+                else:
+                    combined_seg_data = np.logical_or(combined_seg_data, seg_data)
+                    combined_gt_data = np.logical_or(combined_gt_data, gt_data)
+        
         metrics[f'{label}_DSC'].append(round(DSC, 4))
         metrics[f'{label}_NSD'].append(round(NSD, 4))
         print(case, label, round(DSC, 4), 'tol:', label_tolerance[label], round(NSD, 4))
+    
+    if combined_seg_data is not None and combined_gt_data is not None:
+        combined_DSC = compute_dice_coefficient(combined_gt_data, combined_seg_data)
+        combined_surface_distances = compute_surface_distances(combined_gt_data, combined_seg_data, case_spacing)
+        combined_NSD = compute_surface_dice_at_tolerance(combined_surface_distances, label_tolerance['cyst'])
+        metrics['Combined_Tumor_DSC'].append(round(combined_DSC, 4))
+        metrics['Combined_Tumor_NSD'].append(round(combined_NSD, 4))
+        print(case, 'Combined Tumor', round(combined_DSC, 4), 'tol:', label_tolerance['cyst'], round(combined_NSD, 4))
+    else:
+        metrics['Combined_Tumor_DSC'].append(float('nan'))
+        metrics['Combined_Tumor_NSD'].append(float('nan'))
 
 dataframe = pd.DataFrame(metrics)
 dataframe.to_excel(os.path.join(save_path, save_name), index=False)
