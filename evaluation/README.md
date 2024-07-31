@@ -33,7 +33,8 @@ seg_path: path that store your SuPreM or SegResNet inference results, the folder
     - segmentations/
       - mask1.nii.gz
       ...
-      - 
+      -
+  ...
 ```
 
 gt_path: path that store your groundtruth, groundtruth should be organized like the following folder structure:
@@ -60,9 +61,10 @@ gt_path: path that store your groundtruth, groundtruth should be organized like 
     - segmentations/
       - mask1.nii.gz
       ...
-      - 
+      -
+  ...
 ```
-save_path: path that save your DSC and NSD results
+save_path: path that save your DSC and NSD results to
 
 save_name: the prefered name of excel file that contains DSC and NSD results
 
