@@ -6,10 +6,10 @@ import pandas as pd
 from collections import OrderedDict
 from SurfaceDice import compute_surface_distances, compute_surface_dice_at_tolerance, compute_dice_coefficient
 
-seg_path = '' # segmentation results path
-gt_path = '' # groundtruth path
-save_path = '' # DSC and NSD results save path
-save_name = 'DSC_NSD.xlsx' # DSC and NSD results file name 
+seg_path = '/Volumes/PortableSSD/segresnet.jhh/' # segmentation results path
+gt_path = '/Volumes/PortableSSD/TODO/Testing/' # groundtruth path
+save_path = '/Volumes/PortableSSD/Results' # DSC and NSD results save path
+save_name = 'DSC_NSD_suprem.xlsx' # DSC and NSD results file name 
 cases = os.listdir(seg_path)
 cases = [case for case in cases if os.path.isdir(os.path.join(seg_path, case))]
 cases.sort()
