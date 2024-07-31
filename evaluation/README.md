@@ -1,7 +1,7 @@
 #### Calculate DSC and NSD of SuPreM and SegResNet inference results
 ###### Please modify seg_path, gt_path, save_path and save_name to meet your needs. To be specific,
 
-seg_path: path that store your SuPreM or SegResNet inference results, the folder structure should be 
+###### seg_path: path that store your SuPreM or SegResNet inference results, the folder structure should be 
 ```
 - Your_Inference_Result/
   - case1/
