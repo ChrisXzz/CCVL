@@ -38,7 +38,7 @@ seg_path: path that store your SuPreM or SegResNet inference results, the folder
 
 gt_path: path that store your groundtruth, groundtruth should be organized like the following folder structure:
 ```
-- Your_Inference_Result/
+- Your_Groundtruth/
   - case1/
     - combined_labels.nii.gz
     - ct.nii.gz
